@@ -10,9 +10,9 @@ Canny: https://cse110-lab10-wen-tian-pineappl.canny.io/
 
 index: https://wen-tian-pineapple.github.io/Lab10/
 
-second split: https://dcao.github.io/Lab10/secondSplit.html
+second split: https://wen-tian-pineapple.github.io/Lab10/SecondSplit.html
 
-The second split changes the background color to a light blue.
+The second split changes the theme to dark theme.
 
 ## Part 3
 
