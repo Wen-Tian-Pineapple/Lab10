@@ -36,40 +36,38 @@
 
   <!-- Some polyfills to ensure we have promises. -->
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
-  <!-- Split SDK loaded via CDN. -->
-  <script src="https://cdn.split.io/sdk/split-10.15.7.js"></script>
-  <!-- Our custom script. -->
+   <!-- Split SDK loaded via CDN. -->
+   <script src="https://cdn.split.io/sdk/split-10.15.7.js"></script>
+     <!-- Our custom script. -->
   <script type="text/javascript">
     (function() {
       // We will write code here.
-      var ran = Math.random();
       var factory = splitio({
-      core: {
-     authorizationKey: 'r6ujf404nsrkm2nmb2m87a197p3fuepjuiop',
-     key: `${ran}`
+        core: {
+          authorizationKey: 'r6ujf404nsrkm2nmb2m87a197p3fuepjuiop',
+          key:  Math.random()
         }
       });
       var client = factory.client();
       client.on(client.Event.SDK_READY, function() {
         // We will write the following code here
         var treatment = client.getTreatment('wentian');
-        var page = document.querySelector("main");
+        var pages = document.querySelector("main");
 
         if (treatment === 'on') {
           // Insert code for on treatment
-          page.classList.add("double-column");
+          pages.classList.add("double-column");
         } else if (treatment === 'off') {
           // Insert code for off treatment
-          page.classList.remove("double-column");
+          pages.classList.remove("double-column");
         } else {
           // Insert code for control treatment
         }
-      });
-
-      client.destroy().then(function() {
-        // Your data is successfully flushed.
-      });
-    })();
+          client.destroy().then(function() {
+            // Your data is successfully flushed.
+          });
+        });
+      })();
   </script>
 </body>
 
